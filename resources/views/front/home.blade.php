@@ -42,7 +42,7 @@
 
 
             <!-- Categories Product Slider Start -->
-            <h3 class="subtitle">{{$carousel->keyword}} - <a class="viewall" href="{{url('/')}}">view all</a></h3>
+            <h3 class="subtitle">{{$carousel->keyword}} - <a class="viewall" href="{{url('/search')}}/{{$carousel->keyword}}">view all</a></h3>
             <div class="owl-carousel latest_category_carousel">
                 <?php
                 $keyword = $carousel->keyword;
