@@ -23,7 +23,7 @@
                         <li><a href="{{url('merchant/account')}}">My Account</a></li>
                         <li><a href="{{url('merchant/login')}}">Login</a></li>
                         <li><a href="{{url('merchant/register')}}">Register</a></li>
-                        <li><a href="{{url('merchant/products')}}">Products</a></li>
+                        {{-- <li><a href="{{url('merchant/products')}}">Products</a></li> --}}
                     </ul>
                 </div>
                 <div class="column col-lg-3 col-md-3 col-xs-12">
@@ -93,7 +93,9 @@
         <div class="container">
             <div id="powered" class="clearfix">
                 <div class="powered_text pull-left flip">
-                    <p><a href="{{url('')}}">Efashionia</a> © {{date("Y")}} | Design and Developed By <a href="#">SoftNTechnology</a></p>
+                    <p><a href="{{url('')}}">All right reserved © Efashionia</a> {{date("Y")}} | Design and Developed By
+                        {{-- <a href="#">SoftNTechnology</a> --}}
+                    </p>
                 </div>
             </div>
         </div>

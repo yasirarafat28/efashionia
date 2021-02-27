@@ -48,7 +48,7 @@
 <div class="wrapper-wide">
     <div id="header">
         <!-- Top Bar Start-->
-        <nav id="top" class="htop">
+        <nav id="top" class="htop" style="display: none">
             <div class="container">
                 <div class="row"> <span class="drop-icon visible-sm visible-xs"><i class="fa fa-align-justify"></i></span>
                     <div class="pull-left flip left-top">
