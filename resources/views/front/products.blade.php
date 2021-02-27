@@ -1,5 +1,39 @@
 
 @include('front/inc/header')
+
+
+<style>
+    .product-layout.product-list .product-thumb .caption{
+        width:55% !important;
+        float:left;
+    }
+
+    .product-layout.product-list .product-thumb .price.list-price{
+        text-align:right !important;
+    }
+
+    .product-layout.product-list .product-thumb .caption .title-wrap{
+        width:100% !important;
+        display:flex;
+    }
+
+    .product-layout.product-list .product-thumb .caption .title-wrap h4{
+        width:80% !important;
+    }
+    .product-layout.product-list .product-thumb .caption .title-wrap p{
+        width:20% !important;
+    }
+
+    .product-layout.product-list .product-thumb .button-groups{
+        width:25% !important;
+        float:left;
+        text-align: right;
+    }
+    .product-layout.product-list .product-thumb .image img{
+        height:180px !important;
+        width:180px !important;
+    }
+</style>
 <div id="container">
     <div class="container">
         <!-- Breadcrumb Start-->
@@ -140,7 +174,7 @@
                                     @else
                                         $ {{$item->price}}
                                     @endif
-                                    
+
                                 </h3>
                                 <p><strong>Shop :</strong> {{$item->merchant->name}}</p>
                                 <img src="{{asset($item->merchant->logo)}}" alt="{{$item->merchant->name}}" title="{{$item->merchant->name}}" style="width: 120px;">

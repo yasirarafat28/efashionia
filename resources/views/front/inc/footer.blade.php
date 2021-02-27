@@ -93,7 +93,7 @@
         <div class="container">
             <div id="powered" class="clearfix">
                 <div class="powered_text pull-left flip">
-                    <p><a href="{{url('')}}">All right reserved © Efashionia</a> {{date("Y")}} | Design and Developed By
+                    <p><a href="{{url('')}}">All right reserved © Efashionia</a> {{date("Y")}}
                         {{-- <a href="#">SoftNTechnology</a> --}}
                     </p>
                 </div>
