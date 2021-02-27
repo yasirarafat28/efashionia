@@ -54,12 +54,15 @@ class SearchController extends Controller
                 $q->where('status','active');
 
             })
-            ->where(function ($query)  use ($keyword,$related_keywords) {
+            ->where(function ($query)  use ($keyword,$related_keywords,$keyword_entry) {
                 $query->where('title', 'like', '%' . $keyword . '%')
-                ->orwhere(function ($subquery)  use ($related_keywords) {
-                    foreach($related_keywords as $relative_keyword) {
-                        $subquery->where('title', 'like', '%' . $relative_keyword . '%');
-                            //->orWhere('description', 'like', '%' . $relative_keyword . '%');
+                ->orwhere(function ($subquery)  use ($related_keywords,$keyword_entry) {
+                    if($keyword_entry->relative_keyword)
+                    {
+                        foreach($related_keywords as $relative_keyword) {
+                            $subquery->where('title', 'like', '%' . $relative_keyword . '%');
+                                //->orWhere('description', 'like', '%' . $relative_keyword . '%');
+                        }
                     }
                 });
             })
