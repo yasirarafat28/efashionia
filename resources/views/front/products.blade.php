@@ -103,7 +103,7 @@
                                             <h4>
                                                 <a href="#" data-toggle="modal" data-target="#productModal{{$item->id}}">{{$item->title}} </a>
                                             </h4>
-                                            <p class="price list-price" style="font-size: 20px;display:none">
+                                            <p class="price list-price" style="font-size: 20px;">
 
 
                                                 @if($item->discount)
