@@ -34,7 +34,7 @@ class SearchController extends Controller
 
         if (!$keyword_entry->negative_keyword)
         {
-            $keyword_entry->negative_keyword = '';
+            $keyword_entry->negative_keyword = 'lorem';
         }
 
         if (!$keyword_entry->relative_keyword)
