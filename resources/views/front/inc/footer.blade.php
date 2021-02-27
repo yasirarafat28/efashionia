@@ -79,7 +79,7 @@
                     </style>
                     <div class="footer_social">
                         <ul>
-                            <li><a target="_blank"  href="/front/#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank"  href="https://www.facebook.com/efashionia"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             {{-- <li><a href="/front/#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> --}}
                             <li><a target="_blank" href="https://www.instagram.com/efashionia/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                             <li><a target="_blank"  href="https://twitter.com/efashionia"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

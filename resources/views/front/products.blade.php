@@ -98,11 +98,25 @@
                                 <div class="image"><a href="#" data-toggle="modal" data-target="#productModal{{$item->id}}"><img src="{{asset($item->image??'')}}" onerror="this.onerror=null;this.src='https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png';" title=" {{$item->title}} " class="img-responsive" /></a></div>
                                 <div>
                                     <div class="caption">
-                                        <h4><a href="#" data-toggle="modal" data-target="#productModal{{$item->id}}">{{$item->title}} </a></h4>
-                                        <p class="description"> Latest Intel mobile architecture
 
-                                            Powered by the most advanced mobile processors from Intel, t..</p>
-                                        <p class="price" style="font-size: 20px;">
+                                        <div class="title-wrap">
+                                            <h4>
+                                                <a href="#" data-toggle="modal" data-target="#productModal{{$item->id}}">{{$item->title}} </a>
+                                            </h4>
+                                            <p class="price list-price" style="font-size: 20px;display:none">
+
+
+                                                @if($item->discount)
+                                                    <span class="price-new">$ {{$item->price- $item->discount}}</span>
+                                                    <span class="price-old">$ {{$item->price}}</span>
+                                                    <span class="saving">-{{(($item->discount/$item->price)*100)??0}}%</span>
+                                                @else
+                                                    <span class="price-new">$ {{$item->price}}</span>
+                                                @endif
+                                            </p>
+                                        </div>
+                                        <p class="description"> {{substr(strip_tags($item->description),0,200)}} ...</p>
+                                        <p class="price grid-price" style="font-size: 20px;display:none">
 
 
                                             @if($item->discount)
@@ -113,11 +127,11 @@
                                                 <span class="price-new">$ {{$item->price}}</span>
                                             @endif
                                         </p>
+                                    </div>
+                                    <div class="button-groups">
                                         <div style="margin-bottom: 10px;">
                                             <img src="{{asset($item->merchant->logo)}}" alt="" class="main-btn add-to-cart" style="width: 50%;max-height:60px;">
                                         </div>
-                                    </div>
-                                    <div class="button-groups">
                                         <button class="btn btn-primary" style="padding-left: 15%; padding-right: 15%;" type="button" onclick="ProductRedirect({{$item->id}})"><span><i class="fa fa-shopping-cart" ></i>  Buy Now</span></button>
 
                                     </div>
