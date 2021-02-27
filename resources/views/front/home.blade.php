@@ -15,10 +15,10 @@
                   <h4><a href="#" onclick="ProductRedirect({{$item->id}})">{{$item->title}}</a></h4>
                   <p class="price">
                     @if($item->discount)
-                      <span class="price-new">$ {{$item->price- $item->discount}}</span> 
+                      <span class="price-new">$ {{$item->price- $item->discount}}</span>
                       <span class="price-old"> $  {{$item->price}}</span><!-- <span class="saving">-10%</span>-->
                     @else
-                      <span class="price-new">$ {{$item->price}} </span> 
+                      <span class="price-new">$ {{$item->price}} </span>
                     @endif
                   </p>
                 </div>
@@ -50,11 +50,15 @@
                 {
                     $products = App\Product::with(['merchant' => function ($query) {                 $query->where('status','active');             }])->where(function ($query)  use ($keyword) {
                         $query->where('title', 'like', '%' . $keyword . '%');
+                    })->whereHas('merchant',function($q){
+                        $q->where('status','active')
                     })->where('status','active')->orderBy('id','DESC')->take($carousel->quantity)->get();
                 }
                 else{
                     $products = App\Product::with(['merchant' => function ($query) {                 $query->where('status','active');             }])->where(function ($query)  use ($keyword) {
                         $query->where('title', 'like', '%' . $keyword . '%');
+                    })->whereHas('merchant',function($q){
+                        $q->where('status','active')
                     })->where('status','active')->inRandomOrder()->take($carousel->quantity)->get();
                 }
 
@@ -92,7 +96,7 @@
 
 
 
-          
+
           <!-- Brand Logo Carousel Start-->
           <div id="carousel" class="owl-carousel nxt">
             @foreach(App\User::where('type','merchant')->inRandomOrder()->take(15)->get() as $merchant)

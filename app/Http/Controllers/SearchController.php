@@ -34,12 +34,12 @@ class SearchController extends Controller
 
         if (!$keyword_entry->negative_keyword)
         {
-            $keyword_entry->negative_keyword = 'lorem';
+            $keyword_entry->negative_keyword = '';
         }
 
         if (!$keyword_entry->relative_keyword)
         {
-            $keyword_entry->relative_keyword = 'lorem';
+            $keyword_entry->relative_keyword = '';
         }
 
         $negative_keywords = explode(",",$keyword_entry->negative_keyword);
@@ -49,9 +49,11 @@ class SearchController extends Controller
 
 
 
-        $products = Product::with(['merchant' => function ($query) {
-                $query->where('status','active');
-            }])
+        $products = Product::with('merchant')
+            ->whereHas('merchant',function($q){
+                $q->where('status','active');
+
+            })
             ->where(function ($query)  use ($keyword,$related_keywords) {
                 $query->where('title', 'like', '%' . $keyword . '%')
                 ->orwhere(function ($subquery)  use ($related_keywords) {
