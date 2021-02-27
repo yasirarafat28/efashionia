@@ -51,7 +51,7 @@
                     $products = App\Product::with(['merchant' => function ($query) {                 $query->where('status','active');             }])->where(function ($query)  use ($keyword) {
                         $query->where('title', 'like', '%' . $keyword . '%');
                     })->whereHas('merchant',function($q){
-                        $q->where('status','active')
+                        $q->where('status','active');
                     })->where('status','active')->orderBy('id','DESC')->take($carousel->quantity)->get();
                 }
                 else{
