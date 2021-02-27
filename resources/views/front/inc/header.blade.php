@@ -28,7 +28,7 @@
         @else
 
             @if(isset($keyword))
-                Best {{$keyword}} {{App\Setting::setting()->tagline}}
+                Compare Price For Best {{$keyword}} Before Shopping
             @else
                 {{App\Setting::setting()->tagline}}
             @endif
