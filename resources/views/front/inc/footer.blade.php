@@ -30,13 +30,13 @@
                     <h5>Stay Connected</h5>
                     <p>Deals, Steals, and Style Ideas delivered to your inbox regularly.
                     </p>
-                    {{-- <form action="{{route('newsletterSubmit')}}" method="POST">
+                    <form action="{{route('newsletterSubmit')}}" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
                             <input class="input form-control" placeholder="Enter Email Address" name="email">
                         </div>
                         <button class="btn primary-btn">Join Newslatter</button>
-                    </form> --}}
+                    </form>
 
                     <style>
                         .footer_social
