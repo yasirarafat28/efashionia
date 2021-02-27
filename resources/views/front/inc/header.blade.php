@@ -12,7 +12,7 @@
 
 <link href="images/favicon.ico" rel="icon" />
 
-    <meta name='keywords' content='efashionia.Com, Australia Price Comparison, Fashion, Product, Compare Product Price, {{isset($keyword) ?$keyword: ''}}, {{isset($keyword_entry->relative_keyword)? $keyword_entry->relative_keyword:''}}'>
+    <meta name='keywords' content='efashionia.Com, Fashion, Clothing, Appearel, Cosmetics, Makeup, Jewelry, {{isset($keyword) ?$keyword: ''}}, {{isset($keyword_entry->relative_keyword)? $keyword_entry->relative_keyword:''}}'>
     <meta name='subject' content="{{App\Setting::setting()->tagline}}">
 
     <meta name='url' content='{{Illuminate\Support\Facades\URL::current()}}'>
