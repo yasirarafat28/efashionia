@@ -12,11 +12,12 @@ class InformationController extends Controller
     public function information($type)
     {
         $content = Content::where('type',$type)->first();
+        $inner_page = ucwords(str_replace('_',' ',$type));
 
         if ($type =='contact') {
-            return view('front.contact',compact('content'));
+            return view('front.contact',compact('content','inner_page'));
         }else{
-            return view('front.information',compact('content'));
+            return view('front.information',compact('content','inner_page'));
         }
     }
 }

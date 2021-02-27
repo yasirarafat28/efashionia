@@ -21,7 +21,9 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
 
     <title>
-        @if(isset($meta_title) && $meta_title)
+        @if(isset($inner_page) && $inner_page)
+            {{$inner_page}}
+        @elseif(isset($meta_title) && $meta_title)
             {{$meta_title}} | {{App\Setting::setting()->tagline}}
         @else
 
