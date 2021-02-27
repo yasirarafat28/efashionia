@@ -65,6 +65,7 @@
                             display: block;
                             position: relative;
                             text-align: center;
+                            font-size: 25px !important;
                         }
                         .footer_social ul li a i
                         {
