@@ -15,6 +15,7 @@
                         <li><a href="{{url('information/term')}}">Terms & Condition</a></li>
                         <li><a href="{{url('information/privacy')}}">Privacy Policy</a></li>
                         <li><a href="{{url('information/faq')}}">FAQ</a></li>
+                        <li><a href="/sitemap.xml">Sitemap</a></li>
                     </ul>
                 </div>
                 <div class="column col-lg-3 col-md-3 col-xs-12">
