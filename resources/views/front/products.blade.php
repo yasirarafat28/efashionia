@@ -56,7 +56,8 @@
                                 <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="List"><i class="fa fa-th-list"></i></button>
                                 <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="Grid"><i class="fa fa-th"></i></button>
                             </div>
-                            <a href="compare.html" id="compare-total">Product Compare (0)</a> </div>
+                            <a href="compare.html" id="compare-total">Product Compare (0)</a>
+                        </div>
                         <div class="col-sm-2 text-right">
                             <label class="control-label" for="input-sort">Sort By:</label>
                         </div>
@@ -81,7 +82,7 @@
                                 <option {{isset($_GET['limit']) && $_GET['limit']=='100'?'selected':''}} value="100">100</option>
                             </select>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <br />
 
