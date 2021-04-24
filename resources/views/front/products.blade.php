@@ -50,7 +50,7 @@
             <div id="content" class="col-sm-12">
 
                 <div class="product-filter">
-                    <div class="row">
+                    <form class="row">
                         <div class="col-md-4 col-sm-5">
                             <div class="btn-group">
                                 <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="List"><i class="fa fa-th-list"></i></button>
@@ -61,28 +61,24 @@
                             <label class="control-label" for="input-sort">Sort By:</label>
                         </div>
                         <div class="col-md-3 col-sm-2 text-right">
-                            <select id="input-sort" class="form-control col-sm-3">
+                            <select id="input-sort" class="form-control col-sm-3" name="filter">
                                 <option value="" selected="selected">Default</option>
-                                <option value="">Name (A - Z)</option>
-                                <option value="">Name (Z - A)</option>
-                                <option value="">Price (Low &gt; High)</option>
-                                <option value="">Price (High &gt; Low)</option>
-                                <option value="">Rating (Highest)</option>
-                                <option value="">Rating (Lowest)</option>
-                                <option value="">Model (A - Z)</option>
-                                <option value="">Model (Z - A)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='title_ASC'??'selected'}} value="title_ASC">Name (A - Z)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='title_DESC'??'selected'}} value="title_DESC">Name (Z - A)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='price_ASC'??'selected'}} value="price_ASC">Price (Low &gt; High)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='price_DESC'??'selected'}} value="price_DESC">Price (High &gt; Low)</option>
                             </select>
                         </div>
                         <div class="col-sm-1 text-right">
                             <label class="control-label" for="input-limit">Show:</label>
                         </div>
                         <div class="col-sm-2 text-right">
-                            <select id="input-limit" class="form-control">
-                                <option value="" selected="selected">20</option>
-                                <option value="">25</option>
-                                <option value="">50</option>
-                                <option value="">75</option>
-                                <option value="">100</option>
+                            <select id="input-limit" class="form-control" name="limit">
+                                <option value="20" selected="selected">20</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='25'??'selected'}} value="25">25</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='50'??'selected'}} value="50">50</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='75'??'selected'}} value="75">75</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='100'??'selected'}} value="100">100</option>
                             </select>
                         </div>
                     </div>

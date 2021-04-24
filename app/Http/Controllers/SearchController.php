@@ -12,7 +12,23 @@ class SearchController extends Controller
 
     public function index(Request $request, $keyword='')
     {
-        $limit = 40;
+        $limit = 20;
+        if(isset($request->limit) && $request->limit){
+            $limit = $request->limit;
+        }
+
+
+
+        $orderby_field = 'price';
+        $orderby_direction = 'ASC';
+
+        if(isset($request->filter) && $request->filter){
+            $filter_data =explode('_',$request->filter);
+            $orderby_field = $filter_data[0]??'price';
+            $orderby_direction = $filter_data[1]??'ASC';
+        }
+
+
         $keyword = str_replace('-',' ',$keyword);
 
 
@@ -72,7 +88,7 @@ class SearchController extends Controller
                     }
 
             })
-            ->orderBy('price','ASC')
+            ->orderBy($orderby_field,$orderby_direction)
             // ->inRandomOrder()
             ->paginate($limit);
 
