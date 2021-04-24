@@ -72,7 +72,8 @@ class SearchController extends Controller
                     }
 
             })
-            ->inRandomOrder()
+            ->orderBy('price','ASC')
+            // ->inRandomOrder()
             ->paginate($limit);
 
         $meta_description = $keyword_entry->meta_description;
