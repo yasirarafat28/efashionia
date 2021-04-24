@@ -63,10 +63,10 @@
                         <div class="col-md-3 col-sm-2 text-right">
                             <select id="input-sort" class="form-control col-sm-3" name="filter" onchange="this.form.submit();">
                                 <option value="" selected="selected">Default</option>
-                                <option {{isset($_GET['filter']) && $_GET['filter']=='title_ASC'?'selected'}} value="title_ASC">Name (A - Z)</option>
-                                <option {{isset($_GET['filter']) && $_GET['filter']=='title_DESC'?'selected'}} value="title_DESC">Name (Z - A)</option>
-                                <option {{isset($_GET['filter']) && $_GET['filter']=='price_ASC'?'selected'}} value="price_ASC">Price (Low &gt; High)</option>
-                                <option {{isset($_GET['filter']) && $_GET['filter']=='price_DESC'?'selected'}} value="price_DESC">Price (High &gt; Low)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='title_ASC'?'selected':''}} value="title_ASC">Name (A - Z)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='title_DESC'?'selected':''}} value="title_DESC">Name (Z - A)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='price_ASC'?'selected':''}} value="price_ASC">Price (Low &gt; High)</option>
+                                <option {{isset($_GET['filter']) && $_GET['filter']=='price_DESC'?'selected':''}} value="price_DESC">Price (High &gt; Low)</option>
                             </select>
                         </div>
                         <div class="col-sm-1 text-right">
@@ -75,10 +75,10 @@
                         <div class="col-sm-2 text-right">
                             <select id="input-limit" class="form-control" name="limit" onchange="this.form.submit();">
                                 <option value="20" selected="selected">20</option>
-                                <option {{isset($_GET['limit']) && $_GET['limit']=='25'?'selected'}} value="25">25</option>
-                                <option {{isset($_GET['limit']) && $_GET['limit']=='50'?'selected'}} value="50">50</option>
-                                <option {{isset($_GET['limit']) && $_GET['limit']=='75'?'selected'}} value="75">75</option>
-                                <option {{isset($_GET['limit']) && $_GET['limit']=='100'?'selected'}} value="100">100</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='25'?'selected':''}} value="25">25</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='50'?'selected':''}} value="50">50</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='75'?'selected':''}} value="75">75</option>
+                                <option {{isset($_GET['limit']) && $_GET['limit']=='100'?'selected':''}} value="100">100</option>
                             </select>
                         </div>
                     </div>
