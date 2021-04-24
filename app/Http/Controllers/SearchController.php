@@ -72,6 +72,7 @@ class SearchController extends Controller
                     }
 
             })
+            ->inRandomOrder()
             ->paginate($limit);
 
         $meta_description = $keyword_entry->meta_description;
