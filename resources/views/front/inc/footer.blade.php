@@ -38,11 +38,25 @@
                         </div>
                         <button class="btn primary-btn">Join Newslatter</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fpart-second">
+        <div class="container">
+            <div id="powered" class="row clearfix">
+                <div class="powered_text pull-left flip col-md-6">
+                    <p><a href="{{url('')}}">All right reserved © Efashionia</a> {{date("Y")}}
+                        {{-- <a href="#">SoftNTechnology</a> --}}
+                    </p>
+                </div>
+                <div class="col-md-6">
+
 
                     <style>
                         .footer_social
                         {
-                            margin-top: 23px;
+                            margin-top: 0px;
                         }
                         .footer_social ul li
                         {
@@ -87,17 +101,6 @@
                             <li><a target="_blank"  href="https://www.linkedin.com/company/efashionia/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="fpart-second">
-        <div class="container">
-            <div id="powered" class="clearfix">
-                <div class="powered_text pull-left flip">
-                    <p><a href="{{url('')}}">All right reserved © Efashionia</a> {{date("Y")}}
-                        {{-- <a href="#">SoftNTechnology</a> --}}
-                    </p>
                 </div>
             </div>
         </div>
