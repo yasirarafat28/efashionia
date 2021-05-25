@@ -92,7 +92,7 @@
                             background: #14bdee;
                         }
                     </style>
-                    <div class="footer_social">
+                    <div class="footer_social text-cecnter">
                         <ul>
                             <li><a target="_blank"  href="https://www.facebook.com/efashionia"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             {{-- <li><a href="/front/#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> --}}
