@@ -61,8 +61,8 @@
                         .footer_social ul li
                         {
                             display: inline-block;
-                            width: 45px;
-                            height: 45px;
+                            width: 35px;
+                            height: 35px;
                             background: #4b505d;
                             border-radius: 50%;
                             -webkit-transition: all 200ms ease;
@@ -80,12 +80,12 @@
                             display: block;
                             position: relative;
                             text-align: center;
-                            font-size: 25px !important;
+                            font-size: 18px !important;
                         }
                         .footer_social ul li a i
                         {
                             color: #FFFFFF;
-                            line-height: 45px;
+                            line-height: 38px;
                         }
                         .footer_social ul li:hover
                         {
