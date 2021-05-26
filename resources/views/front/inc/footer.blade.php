@@ -13,7 +13,7 @@
                         <li><a href="#">User Registration</a></li>
                         <li><a href="#">Special Deals</a></li>
                         <li><a href="#">Wishlist</a></li>
-                        <li><a target="_blank" ref="nofollow" href="https://www.trustpilot.com/review/efashionia.com)">Feedback</a></li>
+                        <li><a target="_blank" ref="nofollow" href="https://www.trustpilot.com/review/efashionia.com">Feedback</a></li>
                     </ul>
                 </div>
                 <div class="column col-lg-3 col-md-3 col-xs-12">
