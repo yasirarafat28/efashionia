@@ -92,8 +92,8 @@ class FeedController extends Controller
                     $cells_title = $row->getElementsByTagName( 'title' );
                     $cells_url = $row->getElementsByTagName( 'link' );
                     $cells_desc = $row->getElementsByTagName( 'description' );
-                    $cells_image = $row->getElementsByTagName( 'g:image_link' );
-                    $cells_price = $row->getElementsByTagName( 'g:price' );
+                    $cells_image = $row->getElementsByTagName( 'image_link' );
+                    $cells_price = $row->getElementsByTagName( 'price' );
 
 
                     if (isset($cells_title[0]->nodeValue))
