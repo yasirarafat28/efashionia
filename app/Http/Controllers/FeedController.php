@@ -114,7 +114,7 @@ class FeedController extends Controller
                     }
                     if (isset($cells_price[0]->nodeValue))
                     {
-                        $product->price = $cells_price[0]->nodeValue;
+                        $product->price = filter_var( $cells_price[0]->nodeValue, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
                     }
 
                     $product->save();
