@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+		<channel>
+			
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			<product>
+			       <title>Product Name/ Title</title>
+			       <link>Product URL</link>
+			       <description>Product Description</description>
+			       <g:price>Product Price</g:price>
+			       <g:image_link>Product Image URL</g:image_link>
+					<g:product_type>Product Category </g:product_type>
+			       <g:brand>Product Brand</g:brand>
+			</product>
+			
+		</channel>
+		
+</rss>

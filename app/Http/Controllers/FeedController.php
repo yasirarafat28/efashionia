@@ -69,9 +69,9 @@ class FeedController extends Controller
                     }
 
 
-                    
+
                 }
-            }elseif ($request->file_type=='xml') 
+            }elseif ($request->file_type=='xml')
             {
                 $xmlfile = $request->file('feed');;$data[]=array();
                 $tagname ='product';
@@ -89,11 +89,11 @@ class FeedController extends Controller
                     $product->status = 'active';
 
 
-                    $cells_title = $row->getElementsByTagName( 'product_name' );
-                    $cells_url = $row->getElementsByTagName( 'deeplink' );
+                    $cells_title = $row->getElementsByTagName( 'title' );
+                    $cells_url = $row->getElementsByTagName( 'link' );
                     $cells_desc = $row->getElementsByTagName( 'description' );
-                    $cells_image = $row->getElementsByTagName( 'image_url' );
-                    $cells_price = $row->getElementsByTagName( 'price' );
+                    $cells_image = $row->getElementsByTagName( 'g:image_link' );
+                    $cells_price = $row->getElementsByTagName( 'g:price' );
 
 
                     if (isset($cells_title[0]->nodeValue))
@@ -124,7 +124,7 @@ class FeedController extends Controller
 
                 }
             }
-            
+
 
 
 
