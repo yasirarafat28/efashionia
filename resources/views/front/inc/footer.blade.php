@@ -108,6 +108,17 @@
                     </style>
                     <div class="footer_social text-right">
                         
+					{{--	<ul>
+                            <li><a target="_blank"  href="https://www.facebook.com/efashionia"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            {{-- <li><a href="/front/#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> --}}
+                            <li><a target="_blank" href="https://www.instagram.com/efashionia/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank"  href="https://twitter.com/efashionia"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank"  href="https://www.linkedin.com/company/efashionia/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+
+                            <li><a target="_blank" href="http://www.pinterest.com/efashionia"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="http://www.youtube.com/forevernewclothing"><i class="fa fa-youtube" aria-hidden="true"></a></li>
+                        </ul> --}}
 						
 <span><a href="https://www.facebook.com/efashionia" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/facebook-icon.png" style="width:30px;height:30px;" alt="Facebook Icon"></img></a></span>
 <span><a href="https://www.instagram.com/efashionia" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/instagram-icon.png" style="width:30px;height:30px;" alt="Instagram Icon"></img></a></span>
