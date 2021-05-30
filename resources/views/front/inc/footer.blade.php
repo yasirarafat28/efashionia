@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row">
                 {{-- <div class="contact col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <h5>About Efashionia.Com</h5>
-                    <p class="text-justify">Efashionia is the top price comparison based shopping guide in USA. It has been working to reach you to the thousands of online shops that can help you to find out the best price from all of the high profile competitors for fashion, apparel and others beauty care products.</p>
+                    <h5>About efashionia.Com</h5>
+                    <p class="text-justify">efashionia is the top price comparison based shopping guide in USA. It has been working to reach you to the thousands of online shops that can help you to find out the best price from all of the high profile competitors for fashion, apparel and others beauty care products.</p>
                 </div> --}}
                 <div class="column col-lg-3 col-md-3 col-xs-12">
                     <h5>User Area</h5>
@@ -57,8 +57,8 @@
         <div class="container">
             <div id="powered" class="row clearfix" style="padding: 0px !important; margin 0px !important">
                 <div class="powered_text pull-left flip col-md-4">
-                    <p><a href="{{url('')}}">All right reserved © Efashionia</a> {{date("Y")}}
-                        {{-- <a href="#">SoftNTechnology</a> --}}
+                    <p>All right reserved ©<a href="{{url('')}}">efashionia</a> {{date("Y")}}
+                        {{-- <a href="#">efashionia</a> --}}
                     </p>
                 </div>
                 <div class="col-md-4 text-center">
@@ -107,17 +107,16 @@
                         }
                     </style>
                     <div class="footer_social text-right">
-                        <ul>
-                            <li><a target="_blank"  href="https://www.facebook.com/efashionia"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            {{-- <li><a href="/front/#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> --}}
-                            <li><a target="_blank" href="https://www.instagram.com/efashionia/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a target="_blank"  href="https://twitter.com/efashionia"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a target="_blank"  href="https://www.linkedin.com/company/efashionia/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-
-{{--
-                            <li><a target="_blank" href="http://www.pinterest.com/efashionia"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                            <li><a target="_blank" href="http://www.youtube.com/forevernewclothing"><i class="fa fa-youtube" aria-hidden="true"></a></li> --}}
-                        </ul>
+                        
+						<span>
+<span><a href="https://www.facebook.com/efashionia" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/facebook-icon.png" style="width:30px;height:30px;" alt="Facebook Icon"></img></a></span>
+<span><a href="https://www.instagram.com/efashionia" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/instagram-icon.png" style="width:30px;height:30px;" alt="Instagram Icon"></img></a></span>
+<span><a href="https://www.twitter.com/efashionia" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/twitter-icon.png" style="width:30px;height:30px;" alt="Twitter Icon"></img></a></span>
+<span><a href="https://www.pinterest.com/efashionia" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/pinterest-icon.png" style="width:30px;height:30px;" alt="Pinterest Icon"></img></a></span>
+<span><a href="https://www.linkedin.com/company/efashionia/" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/linkedIn-icon.png" style="width:30px;height:30px;" alt="LinkedIn Icon"></img></a></span>
+<span><a href="https://www.youtube.com/channel/UC_ICb9RyGPlg9I8O4_2Hy8w" rel="nofollow" target="blank"><img src="http://efashionia.com/images/social_media_icons/youtube-icon.png" style="width:30px;height:30px;" alt="YouTube Icon"></img></a></span>
+</span>
+						
                     </div>
                 </div>
             </div>
