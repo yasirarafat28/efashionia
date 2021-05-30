@@ -114,6 +114,8 @@
                             <li><a target="_blank" href="https://www.instagram.com/efashionia/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                             <li><a target="_blank"  href="https://twitter.com/efashionia"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                             <li><a target="_blank" href="http://www.pinterest.com/efashionia"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a target="_blank"  href="https://www.linkedin.com/company/efashionia/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a target="_blank" href="https://www.youtube.com/channel/UC_ICb9RyGPlg9I8O4_2Hy8w"><i class="fa fa-youtube" aria-hidden="true"></a></li>
 
 {{--
                             <li><a target="_blank"  href="https://www.linkedin.com/company/efashionia/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
