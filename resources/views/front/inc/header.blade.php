@@ -5,14 +5,14 @@
 
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="@if(isset($keyword) )Compare prices for {{ucwords($keyword)}} from thousands of online stores in USA. Find the best deal for {{ucwords($keyword)}} before buy.
+    <meta name="description" content="@if(isset($keyword) )Compare prices for {{ucwords($keyword)}} from thousands of online stores in United States. Find the best deal for {{ucwords($keyword)}} before buy.
     @else
-    	Efashionia is the top marketplace and price comparison shopping guide in USA. Compare prices from thousands of online shops for all kind of fashion and others beauty care products. | efashionia
+    	efashionia is the top marketplace and price comparison shopping guide in United States. Compare prices from thousands of online shops for all kind of fashion, apparel and others beauty care products. | efashionia
     @endif ">
 
 <link href="images/favicon.ico" rel="icon" />
 
-    <meta name='keywords' content='efashionia.Com, Fashion, Clothing, Appearel, Cosmetics, Makeup, Jewelry, {{isset($keyword) ?$keyword: ''}}, {{isset($keyword_entry->relative_keyword)? $keyword_entry->relative_keyword:''}}'>
+    <meta name='keywords' content='efashionia.com, Fashion, Clothing, Appearel, Cosmetics, Makeup, Jewelry, {{isset($keyword) ?$keyword: ''}}, {{isset($keyword_entry->relative_keyword)? $keyword_entry->relative_keyword:''}}'>
     <meta name='subject' content="{{App\Setting::setting()->tagline}}">
 
     <meta name='url' content='{{Illuminate\Support\Facades\URL::current()}}'>
@@ -86,7 +86,7 @@
                 <div class="table-container">
                     <!-- Logo Start -->
                     <div class="col-table-cell col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
-                        <div id="logo" style="padding: 5px 0px;"><a href="{{url('/')}}"><img  class="img-responsive" src="{{asset('images/logo.png')}}" title="efashionia.Com" alt="MarketShop" style="height: 100px;" /></a></div>
+                        <div id="logo" style="padding: 5px 0px;"><a href="{{url('/')}}"><img  class="img-responsive" src="{{asset('images/logo.png')}}" title="efashionia.com" alt="Logo of efashionia" style="height: 100px;" /></a></div>
                     </div>
                     <!-- Logo End -->
                     <!-- Mini Cart End-->
