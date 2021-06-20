@@ -49,7 +49,7 @@
           @foreach($inqueries as $item)
           <tr>
             <td>{{$item->name}}</td>
-            <td>{{$item->email}}</td>
+            <td><a href="mailto:{{$item->email}}">{{$item->email}}</a></td>
             <td>{{$item->subject}}</td>
             <td>{{$item->created_at}}</td>
             <td id="action" class="action-td">
@@ -74,15 +74,15 @@
                             </tr>
                             <tr>
                               <td>Email</td>
-                              <td>{{$item->email}}</td>
+                              <td><a href="mailto:{{$item->email}}">{{$item->email}}</a></td>
                             </tr>
                             <tr>
-                              <td>Phone</td>
+                              <td>Subject</td>
                               <td>{{$item->subject}}</td>
                             </tr>
 
                             <tr>
-                              <td>Address</td>
+                              <td>Message</td>
                               <td>{{$item->message}}</td>
                             </tr>
                             <tr>
@@ -111,7 +111,7 @@
                 {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i> Delete ', array(
                      'type' => 'submit',
                      'class' => 'btn btn-danger btn-xs btnper',
-                    'title' => 'Delete',
+                    'title' => 'Delete user',
                     'onclick'=>'return confirm("Confirm delete?")'
                      )) !!}
                 {!! Form::close() !!}
