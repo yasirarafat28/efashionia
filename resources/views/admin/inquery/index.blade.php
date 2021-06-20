@@ -3,7 +3,7 @@
   <!-- Sidebar -->
 
 @include('admin/inc/sidebar')
-      
+
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -89,7 +89,7 @@
                               <td>Timestamp</td>
                               <td>{{$item->created_at}}</td>
                             </tr>
-                            
+
                           </table>
                         </div>
                       </div>
@@ -99,6 +99,23 @@
 
 
                 <!--Show ModalEnd -->
+
+
+
+              <a class="btn btn-danger" title="Delete product">
+                {!! Form::open([
+                   'method'=>'DELETE',
+                   'url' => ['/admin/inquery', $item->id],
+                   'style' => 'display:inline'
+                ]) !!}
+                {!! Form::button('<i class="fa fa-trash" aria-hidden="true"></i> Delete ', array(
+                     'type' => 'submit',
+                     'class' => 'btn btn-danger btn-xs btnper',
+                    'title' => 'Delete',
+                    'onclick'=>'return confirm("Confirm delete?")'
+                     )) !!}
+                {!! Form::close() !!}
+              </a>
 
             </td>
           </tr>

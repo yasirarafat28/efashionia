@@ -14,6 +14,15 @@ class InqueryController extends Controller
         return view('admin.inquery.index',compact('inqueries'));
     }
 
+
+    public function destroy($id)
+    {
+
+
+        Inquery::destroy($id);
+        return back()->withSuccess('Inquiry removed successfully!!');
+    }
+
     public function submit(Request $request)
     {
         $inquery = new Inquery();

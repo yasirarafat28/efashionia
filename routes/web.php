@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth','role:admin']], function (){
     Route::post('admin/content/store', 'ContentController@store');
 
 
-    Route::get('admin/inquery', 'InqueryController@index');
+    Route::resource('admin/inquery', 'InqueryController');
     Route::get('admin/redirection_record', 'RedirectController@index');
 
 
