@@ -74,7 +74,7 @@ class FeedController extends Controller
             }elseif ($request->file_type=='xml')
             {
                 $xmlfile = $request->file('feed');;$data[]=array();
-                $tagname ='product';
+                $tagname ='item';
 
                 $dom = new \DOMDocument();
                 $dom->load($xmlfile);
