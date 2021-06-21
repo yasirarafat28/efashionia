@@ -3,7 +3,7 @@
   <!-- Sidebar -->
 
 @include('admin/inc/sidebar')
-      
+
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -34,7 +34,7 @@
 
       <!-- Small boxes (Stat box) -->
       <div class="pb-4">
-        
+
         <a class="btn btn-primary"  data-toggle="modal" data-target="#modal-create" ><i class="fa fa-plus" aria-hidden="true"></i> Create merchant</a>
 
 
@@ -54,21 +54,21 @@
                       <label for="name" class="col-md-4 control-label">Name</label>
                       <div class="col-md-6">
                           <input class="form-control" name="name" type="text" id="name">
-                          
+
                       </div>
                   </div>
                   <div class="form-group ">
                       <label for="email" class="col-md-4 control-label">Email</label>
                       <div class="col-md-6">
                           <input class="form-control" name="email" type="email" id="email">
-                          
+
                       </div>
                   </div>
                   <div class="form-group ">
                       <label for="phone" class="col-md-4 control-label">Phone Number</label>
                       <div class="col-md-6">
                           <input class="form-control" name="phone" type="text" id="phone">
-                          
+
                       </div>
                   </div>
                   <div class="form-group ">
@@ -124,7 +124,7 @@
                       <label for="password" class="col-md-4 control-label">Password</label>
                       <div class="col-md-6">
                           <input class="form-control" name="password" type="password" value="" id="password">
-                          
+
                       </div>
                   </div>
                     <div class="form-group">
@@ -133,7 +133,7 @@
                       </div>
                   </div>
                 </form>
-              </div>                    
+              </div>
             </div>
             <!-- /.modal-content -->
           </div>
@@ -147,6 +147,7 @@
         <thead>
           <tr>
             <th>Name</th>
+            <th>URL</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Timestamp</th>
@@ -158,6 +159,7 @@
           @foreach($merchants as $item)
           <tr>
             <td>{{$item->name}}</td>
+            <td><a href="{{$item->url}}" target="_blank">{{$item->url}}</a></td>
             <td>{{$item->email}}</td>
             <td>{{$item->phone}}</td>
             <td>{{$item->created_at}}</td>
@@ -326,22 +328,22 @@
                               <td>Logo</td>
                               <td><img src="{{asset($item->logo)}}" alt="" style="width: 100px; "></td>
                             </tr>
-                            
+
                             <tr>
                               <td>Gender</td>
                               <td>{{$item->gender}}</td>
                             </tr>
-                            
+
                             <tr>
                               <td>Status</td>
                               <td>{{$item->status}}</td>
                             </tr>
-                            
+
                             <tr>
                               <td>Timestamp</td>
                               <td>{{$item->created_at}}</td>
                             </tr>
-                            
+
                           </table>
                         </div>
                       </div>
@@ -360,6 +362,7 @@
         <tfoot>
           <tr>
             <th>Name</th>
+            <th>URL</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Timestamp</th>

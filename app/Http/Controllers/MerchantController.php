@@ -17,7 +17,7 @@ class MerchantController extends Controller
     {
         //
 
-        $merchants = User::where('type','merchant')->get();
+        $merchants = User::where('type','merchant')->orderBy('created_at','DESC')->get();
         return view('admin/merchant/index',compact('merchants'));
     }
 
