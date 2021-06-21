@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="@if(isset($keyword) )Compare prices for {{ucwords($keyword)}} from thousands of online stores in United States. Find the best deal for {{ucwords($keyword)}} before buy.
     @else
-    	efashionia is the top marketplace and price comparison shopping guide in United States. Compare prices from thousands of online shops for all kind of fashion, apparel and others beauty care products. | efashionia
+    	efashionia is the top marketplace and price comparison shopping guide in United States. Compare prices from thousands of online shops for all kind of fashion, apparel, jewelry, lifestyle and beauty care products. | efashionia
     @endif ">
 
 <link href="images/favicon.ico" rel="icon" />
