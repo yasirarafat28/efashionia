@@ -1,5 +1,6 @@
 
-@include('front/inc/header')
+@extends('layouts.app')
+@section('content')
 	<!-- HOME -->
 	<div id="home">
 		<!-- container -->
@@ -123,4 +124,5 @@
 		<!-- /container -->
 	</div>
 	<!-- /section -->
-@include('front/inc/footer')
+
+@endsection

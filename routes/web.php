@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+Auth::routes(['verify'=>true,'register'=>false]);
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
@@ -27,7 +27,7 @@ Route::post('ProductRedirect', 'RedirectController@redirect')->name('ProductRedi
 
 //Merchant
 Route::get('/merchant/login', function () {
-    return view('front.merchant-login');
+    return  redirect('login');
 });
 
 //Merchant
@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth','role:admin']], function (){
 
 
 
-Route::group(['middleware' => ['auth','role:merchant']], function (){
+Route::group(['middleware' => ['auth','role:merchant','verified']], function (){
     Route::get('/merchant/account', 'MerchantController@account')->name('merchant-dashboard');
     Route::get('/merchant/edit-information', 'MerchantController@SelfEdit')->name('merchant-edit');
     Route::post('/merchant/edit-information-submit', 'MerchantController@SelfEditSubmit')->name('merchant-edit-submit');

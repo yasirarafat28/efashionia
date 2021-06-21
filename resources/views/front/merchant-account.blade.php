@@ -1,5 +1,6 @@
 
-@include('front/inc/header')
+@extends('layouts.app')
+@section('content')
 <!-- BREADCRUMB -->
 <div id="breadcrumb">
     <div class="container">
@@ -38,4 +39,5 @@
 </div>
 <!-- /section -->
 
-@include('front/inc/footer')
+
+@endsection

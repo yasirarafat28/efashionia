@@ -1,5 +1,6 @@
 
-@include('front/inc/header')
+@extends('layouts.app')
+@section('content')
 <!-- BREADCRUMB -->
 <div id="breadcrumb">
   <div class="container">
@@ -32,7 +33,7 @@
             </div>
           @endif
 
-          <form method="POST" action="{{ url('admin/merchants') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('merchant-registration-submit') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
             {!! csrf_field() !!}
 
             <div class="form-group ">
@@ -114,7 +115,7 @@
             </div>
             <div class="form-group">
               <div class="col-md-offset-4 col-md-4">
-                <input class="btn btn-primary btnmerchantcreate btnper" type="submit" value="Create">
+                  <button class="btn btn-primary btnmerchantcreate btnper">Submit</button>
               </div>
             </div>
           </form>
@@ -133,4 +134,5 @@
 </div>
 <!-- /section -->
 
-@include('front/inc/footer')
+
+@endsection

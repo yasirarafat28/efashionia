@@ -1,5 +1,6 @@
 
-@include('front/inc/header')
+@extends('layouts.app')
+@section('content')
 
 
 <style>
@@ -89,7 +90,7 @@
 
                 <div class="row products-category">
 
-                    @foreach($products as $key=>$item)
+                    @forelse($products as $key=>$item)
                         <div class="product-layout product-list col-sm-12">
                             <div class="product-thumb">
                                 <div class="image"><a href="#" data-toggle="modal" data-target="#productModal{{$item->id}}"><img src="{{asset($item->image??'')}}" onerror="this.onerror=null;this.src='https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png';" title=" {{$item->title}} " class="img-responsive" /></a></div>
@@ -136,7 +137,15 @@
                             </div>
                         </div>
 
-                    @endforeach
+                    @empty
+
+
+                    <div class="col-sm-12 text-center">
+                        <h4 class="text-danger"> <i class="fa fa-warning"></i> Sorry! No product found</h4>
+                    </div>
+
+
+                    @endforelse
                 </div>
                 <div class="row">
                     <div class="pull-right">
@@ -210,4 +219,5 @@
 @endforeach
 
 
-@include('front/inc/footer')
+
+@endsection

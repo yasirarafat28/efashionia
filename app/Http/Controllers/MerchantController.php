@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Welcome;
 use Illuminate\Http\Request;
 use App\User;
 use App\Product;
 use Auth;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Facades\Mail;
 
 class MerchantController extends Controller
 {
@@ -229,6 +230,8 @@ class MerchantController extends Controller
         }
 
         $merchant->save();
+
+        Mail::to($merchant->email)->send(new Welcome(($merchant)));
         return back()->withSuccess('Merchants Successfully Updated!');
     }
 
@@ -239,6 +242,58 @@ class MerchantController extends Controller
         return view('front.merchant-products',compact('products'));
 
     }
+
+
+
+    public function merchant_registration_submit(Request $request)
+    {
+
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'phone' => 'required|min:11|numeric',
+            'url' => 'required',
+            'password' => 'required',
+        ]);
+
+        $merchant = new User();
+        $merchant->name = $request->name;
+        $merchant->phone = $request->phone;
+        $merchant->email = $request->email;
+        $merchant->zipcode = $request->zipcode;
+        $merchant->url = $request->url;
+        $merchant->city = $request->city;
+        $merchant->state = $request->state;
+        $merchant->country = $request->country;
+        $merchant->street = $request->street;
+        $merchant->comment = $request->comment;
+        $merchant->status = 'pending';
+        $merchant->password = Hash::make($request->password);
+        $merchant->type = 'merchant';
+
+        if ($request->hasFile('logo')) {
+            $image      = $request->file('logo');
+            $imageName  = 'merchant_logo'.date('ymdhis').'.'.$image->getClientOriginalExtension();
+            $path       = 'images/merchant_logo/';
+            $image->move($path, $imageName);
+            $imageUrl   = $path . $imageName;
+
+            $merchant->logo = $imageUrl;
+        }
+
+
+        $merchant->save();
+
+
+        $merchant->syncRoles(['merchant']);
+
+
+        Mail::to($merchant->email)->send(new Welcome(($merchant)));
+
+
+        return back()->withSuccess('You have registered successfully!');
+    }
+
 
 
 }

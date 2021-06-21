@@ -1,4 +1,5 @@
-@include('front/inc/header')
+@extends('layouts.app')
+@section('content')
   <div id="container">
 
     <div class="container">
@@ -111,4 +112,5 @@
   </div>
 
 
-@include('front/inc/footer')
+
+@endsection

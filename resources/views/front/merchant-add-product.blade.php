@@ -1,5 +1,6 @@
-  
-@include('front/inc/header')
+
+@extends('layouts.app')
+@section('content')
 <div class="container section-padding-100">
   <div class="row">
     @if(session()->has('success'))
@@ -14,8 +15,8 @@
           </div>
       @endif
   </div>
-  <div class="row"> 
-    <div id="content" class="col-sm-9">      
+  <div class="row">
+    <div id="content" class="col-sm-9">
       <h2>Add a Product</h2>
         <form method="POST" action="{{ route('add-product-submit') }}" accept-charset="UTF-8" class="form-vertical" enctype="multipart/form-data">
 
@@ -183,7 +184,7 @@
 </div>
 
 <script type="text/javascript">
-  
+
   function get_package_list(service_id)
   {
     var list = $("#package_id");
@@ -219,4 +220,5 @@
         float: left;
     }
 </style>
-@include('front/inc/footer')
+
+@endsection
