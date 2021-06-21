@@ -43,7 +43,7 @@
                    style="padding: 30px;">
                 <tr style="vertical-align: bottom;">
                     <td>
-                        <a href=""><img src="https://i.imgur.com/qqKtCko.png" style="width: 200px;" ></a>
+                        <a href=""><img src="https://i.imgur.com/PigPAmr.png" style="width: 200px;" ></a>
                     </td>
                     <td style="text-align: right;">
 
@@ -70,13 +70,6 @@
                    style="position:relative;background-color:#0F082B;padding: 30px 0px;">
                 <tr style="text-align: center">
                     <td>
-                        <a href="">
-                            <img src="https://i.imgur.com/qqKtCko.png" style="width: 200px;" >
-                        </a>
-                    </td>
-                </tr>
-                <tr style="text-align: center">
-                    <td>
                         <div style="padding-bottom: 20px;">
                             <a style="color: #fff;text-decoration: none;margin:10px 5px 0 5px;display: inline-block;"
                                href="{{url('about')}}">About us</a>
@@ -89,7 +82,7 @@
 
                     <td>
                         <div class="socials">
-                            <a href="https://web.facebook.com/skoolio.xyz" target="_blank">
+                            <a href="https://web.facebook.com/efashionia" target="_blank">
                                 <img src="https://i.imgur.com/VSh6spe.png" >
                             </a>
                             <a href="#" target="_blank">
@@ -106,7 +99,7 @@
                         <div style="margin-top: 30px;">
                                 <span style="color: #fff;">&copy; {{date('Y')}} <a
                                         style="color: #fff;text-decoration: none;margin-top: 10px;display: inline-block;"
-                                        href="{{url('/')}}">Skoolio.xyz</a>. All Rights Reserved</span>
+                                        href="{{url('/')}}">efashionia.com</a>. All Rights Reserved</span>
                         </div>
                     </td>
 
