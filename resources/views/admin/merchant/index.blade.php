@@ -151,6 +151,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Timestamp</th>
+            <th>Status</th>
             <th  class="action-td" >Action</th>
           </tr>
         </thead>
@@ -163,6 +164,7 @@
             <td>{{$item->email}}</td>
             <td>{{$item->phone}}</td>
             <td>{{$item->created_at}}</td>
+            <td>{{$item->status}}</td>
             <td id="action" class="action-td">
               <a class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{$item->id}}" title="Edit merchant"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 
@@ -366,6 +368,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Timestamp</th>
+            <th>Status</th>
             <th class="action-td">Action</th>
           </tr>
         </tfoot>
