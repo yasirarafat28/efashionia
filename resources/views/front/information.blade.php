@@ -1,28 +1,23 @@
 
 @extends('layouts.app')
 @section('content')
-<div id="container">
+<section class="section-content padding-y">
     <div class="container">
-        <!-- Breadcrumb Start-->
-        <ul class="breadcrumb">
-            <li><a href="{{url('/')}}"><i class="fa fa-home"></i></a></li>
-            <li><a href="{{url('information/about')}}">{{isset($content->title) ? $content->title : ''}}</a></li>
-        </ul>
-        <!-- Breadcrumb End-->
-        <div class="row">
-            <!--Middle Part Start-->
-            <div id="content" class="col-sm-12">
-                <h1 class="title">{{isset($content->title) ? $content->title : ''}}</h1>
-                <div class="row">
-                    <p>
-                        {!!isset($content->description) ? $content->description : ''!!}
-                    </p>
-                </div>
-            </div>
-            <!--Middle Part End -->
-        </div>
-    </div>
-</div>
+
+    <header class="section-heading">
+        <h2 class="section-title">{{isset($content->title) ? $content->title : ''}} </h2>
+    </header><!-- sect-heading -->
+
+    <article>
+
+
+
+        {!!isset($content->description) ? $content->description : ''!!}
+
+    </article>
+
+    </div> <!-- container .//  -->
+    </section>
 
 
 @endsection

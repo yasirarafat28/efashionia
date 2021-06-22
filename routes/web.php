@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes(['verify'=>true,'register'=>false]);
+Auth::routes(['verify'=>true]);
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
@@ -32,7 +32,7 @@ Route::get('/merchant/login', function () {
 
 //Merchant
 Route::get('/merchant/register', function () {
-    return view('front.merchant-register');
+    return redirect('/register');
 });
 
 Route::post('/merchant/register', 'MerchantController@merchant_registration_submit')->name('merchant-registration-submit');

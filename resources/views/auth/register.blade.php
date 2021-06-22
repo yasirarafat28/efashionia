@@ -1,77 +1,93 @@
+
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<section class="section-conten padding-y" style="min-height:60vh">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    <!-- ============================ COMPONENT LOGIN   ================================= -->
+        <div class="card mx-auto" style="max-width: 580px; margin-top:50px;">
+          <div class="card-body">
+          <h4 class="card-title mb-4">Sign up</h4>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+          @if(session()->has('success'))
+            <div class="alert alert-success">
+              {{ session('success') }}
+            </div>
+          @endif
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+          @if($errors->any())
+            <div class="alert alert-danger">
+              {{ $errors->first() }}
+            </div>
+          @endif
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+          <form method="POST" action="{{ route('merchant-registration-submit') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+            {!! csrf_field() !!}
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+            <div class="form-group ">
+              <label for="name" class="form-label">Name</label>
+              <input class="form-control" name="name" type="text" id="name">
+            </div>
+            <div class="form-group ">
+              <label for="email" class="form-label">Email</label>
+              <input class="form-control" name="email" type="email" id="email">
+            </div>
+            <div class="form-group ">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input class="form-control" name="phone" type="text" id="phone">
+            </div>
+            <div class="form-group ">
+              <label for="phone" class="form-label">Shop URl</label>
+              <input class="form-control" name="url" type="text" id="phone">
+            </div>
+            <div class="row d-none">
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="form-group col-md-6">
+                    <label for="phone" class="form-label">Street</label>
+                    <input class="form-control" name="street" type="text" id="phone">
+                </div>
+                <div class="form-group  col-md-6">
+                    <label for="phone" class="form-label">City</label>
+                    <input class="form-control" name="city" type="text" id="phone">
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="row d-none">
+
+                <div class="form-group  col-md-6">
+                    <label for="phone" class="form-label">State</label>
+                    <input class="form-control" name="state" type="text" id="phone">
+                </div>
+                <div class="form-group  col-md-6">
+                    <label for="phone" class="form-label">Country</label>
+                    <input class="form-control" name="country" type="text" id="phone">
+                </div>
+            </div>
+            <div class="form-group  d-none">
+              <label for="phone" class="form-label">Comment</label>
+              <textarea name="comment" class="form-control summernote"></textarea>
+            </div>
+            <div class="form-group ">
+              <label for="phone" class="form-label">Logo</label>
+              <input class="form-control" name="logo" type="file" id="phone">
+            </div>
+            <div class="form-group ">
+              <label for="password" class="form-label">Password</label>
+              <input class="form-control" name="password" type="password" value="" id="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Signup  </button>
+            </div> <!-- form-group// -->
+          </form>
+          </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+
+         <p class="text-center mt-4">Don't have account? <a href="{{url('merchant/register')}}">Sign up</a></p>
+         <br><br>
+    <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+
+
+</section>
+
+
 @endsection

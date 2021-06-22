@@ -2,61 +2,40 @@
 @extends('layouts.app')
 @section('content')
 
-<!-- BREADCRUMB -->
-<div id="breadcrumb">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li class="active">Login</li>
-        </ul>
-    </div>
-</div>
-<!-- /BREADCRUMB -->
+<section class="section-conten padding-y" style="min-height:60vh">
+
+    <!-- ============================ COMPONENT LOGIN   ================================= -->
+        <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+          <div class="card-body">
+          <h4 class="card-title mb-4">Sign in</h4>
+          <form action="{{url('login')}}" method="post" enctype="multipart/form-data">
+            @csrf
+                {{-- <a href="#" class="btn btn-facebook btn-block mb-2"> <i class="fab fa-facebook-f"></i> &nbsp;  Sign in with Facebook</a>
+                <a href="#" class="btn btn-google btn-block mb-4"> <i class="fab fa-google"></i> &nbsp;  Sign in with Google</a> --}}
+              <div class="form-group">
+                 <input name="email" class="form-control" placeholder="Username" type="email">
+              </div> <!-- form-group// -->
+              <div class="form-group">
+                <input name="password" class="form-control" placeholder="Password" type="password">
+              </div> <!-- form-group// -->
+
+              <div class="form-group">
+                  <a href="{{url('password/reset')}}" class="float-right">Forgot password?</a>
+                <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> Remember </div> </label>
+              </div> <!-- form-group form-check .// -->
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+              </div> <!-- form-group// -->
+          </form>
+          </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+
+         <p class="text-center mt-4">Don't have account? <a href="{{url('merchant/register')}}">Sign up</a></p>
+         <br><br>
+    <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
 
 
-<!-- section -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <div id="content" class="col-sm-9 container-fluid">
-                <div class="card">
-                    <div class="card-header">
-
-                        <h2>Merchant Login</h2>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{url('login')}}" method="post" enctype="multipart/form-data">
-                            {{csrf_field()}}
-                            <div class="form-group">
-                                <label class="control-label" for="input-email">E-Mail Address</label>
-                                <input type="text" name="email" value="" placeholder="E-Mail Address" id="input-email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="input-password">Password</label>
-                                <input type="password" name="password" value="" placeholder="Password" id="input-password" class="form-control">
-                                <a href="{{url('password/reset')}}">Forgotten Password</a></div>
-                            <input type="submit" value="Login" class="btn btn-primary">
-                        </form>
-
-                        <p>Didn't registerd yet? <a href="{{url('merchant/register')}}" class="">Register now</a></p>
-                    </div>
-                </div>
-            </div>
-
-
-            <aside id="column-right" class="col-sm-3 hidden-xs">
-
-                @include('front/inc/merchant-sidebar')
-            </aside>
-
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /section -->
+</section>
 
 
 @endsection

@@ -1,115 +1,369 @@
 @extends('layouts.app')
 @section('content')
-  <div id="container">
 
+
+
+<!-- ========================= SECTION INTRO ========================= -->
+<section class="section-intro padding-y-sm">
     <div class="container">
-      <div class="row">
-        <!-- Left Part Start-->
-        <aside id="column-left" class="col-sm-3 hidden-xs">
 
-          <h3 class="subtitle">Specials</h3>
-          <div class="side-item">
-            @foreach(App\Product::with(['merchant' => function ($query) {                 $query->where('status','active');             }])->inRandomOrder()->take(12)->get() as $item)
-              <div class="product-thumb clearfix">
-                <div class="image"><a  href="#" onclick="ProductRedirect({{$item->id}})"><img src="{{asset($item->image??'')}}" onerror="this.onerror=null;this.src='{{asset('images/NO_IMG.png')}}';" title=" {{$item->title}} " class="img-responsive" /></a></div>
-                <div class="caption">
-                  <h4><a href="#" onclick="ProductRedirect({{$item->id}})">{{$item->title}}</a></h4>
-                  <p class="price">
-                    @if($item->discount)
-                      <span class="price-new">$ {{$item->price- $item->discount}}</span>
-                      <span class="price-old"> $  {{$item->price}}</span><!-- <span class="saving">-10%</span>-->
-                    @else
-                      <span class="price-new">$ {{$item->price}} </span>
-                    @endif
-                  </p>
-                </div>
-              </div>
-            @endforeach
-
-          </div>
-
-        </aside>
-        <!-- Left Part End-->
-        <!--Middle Part Start-->
-        <div id="content" class="col-sm-9">
-          <!-- Slideshow Start-->
-          <div class="slideshow single-slider owl-carousel">
-              @foreach($sliders as $slider)
-                  <div class="item"> <a href="{{url($slider->link)}}"><img class="img-responsive" src="{{url($slider->image)}}" alt="banner 2" style="width:100%;" /></a> </div>
-              @endforeach
-          </div>
-          <!-- Slideshow End-->
-          @foreach($carousels as $carousel)
-
-
-            <!-- Categories Product Slider Start -->
-            <h3 class="subtitle">{{$carousel->keyword}} - <a class="viewall" href="{{url('/search')}}/{{$carousel->keyword}}">view all</a></h3>
-            <div class="owl-carousel latest_category_carousel">
-                <?php
-                $keyword = $carousel->keyword;
-                if ($carousel->type=='latest')
-                {
-                    $products = App\Product::with(['merchant' => function ($query) {                 $query->where('status','active');             }])->where(function ($query)  use ($keyword) {
-                        $query->where('title', 'like', '%' . $keyword . '%');
-                    })->whereHas('merchant',function($q){
-                        $q->where('status','active');
-                    })->where('status','active')->orderBy('id','DESC')->take($carousel->quantity)->get();
-                }
-                else{
-                    $products = App\Product::with(['merchant' => function ($query) {                 $query->where('status','active');             }])->where(function ($query)  use ($keyword) {
-                        $query->where('title', 'like', '%' . $keyword . '%');
-                    })->whereHas('merchant',function($q){
-                        $q->where('status','active');
-                    })->where('status','active')->inRandomOrder()->take($carousel->quantity)->get();
-                }
-
-                ?>
-                @foreach($products as $key=>$item)
-                    <div class="product-thumb">
-                        <div class="image"><a href="#"  onclick="ProductRedirect({{$item->id}})"><img src="{{asset($item->image??'')}}" onerror="this.onerror=null;this.src='{{asset('images/NO_IMG.png')}}';" title=" {{$item->title}} " class="img-responsive" /></a></div>
-                        <div class="caption">
-                            <h4><a href="#" onclick="ProductRedirect({{$item->id}})">{{$item->title}}</a></h4>
-                            <p class="product-price">
-
-                                @if($item->discount)
-                                    $ {{$item->price- $item->discount}}
-                                    <del class="product-old-price"> $  {{$item->price}}</del>
-                                @else
-                                    $ {{$item->price}}
-                                @endif
-
-                            </p>
-                            <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                        </div>
-                        <!--<div class="button-group">
-
-                            <button class="btn-primary" type="button" onclick="ProductRedirect({{$item->id}})"><span>Buy Now</span></button>
-                        </div>-->
-                        <button class="btn btn-primary" type="button" onclick="ProductRedirect({{$item->id}})" style="padding-left: 15%; padding-right: 15%;"><span>Buy Now</span></button>
-                    </div>
-                @endforeach
-
-            </div>
-            <!-- Categories Product Slider End -->
-          @endforeach
-
-
-
-
-
-
-          <!-- Brand Logo Carousel Start-->
-          <div id="carousel" class="owl-carousel nxt">
-            @foreach(App\User::where('type','merchant')->inRandomOrder()->take(15)->get() as $merchant)
-              <div class="item text-center" style="border: 1px solid #ddd;    margin: 2px 10px;"> <a href="#"><img src="{{asset($merchant->logo)}}" alt="{{$merchant->name}}" class="img-responsive" style="height: 80px;" /></a> </div>
-            @endforeach
-          </div>
-          <!-- Brand Logo Carousel End -->
-        </div>
-        <!--Middle Part End-->
-      </div>
+    <div class="intro-banner-wrap">
+        <img src="/front/asset/1.jpg" class="img-fluid rounded">
     </div>
-  </div>
+
+    </div> <!-- container //  -->
+    </section>
+    <!-- ========================= SECTION INTRO END// ========================= -->
+
+
+    <!-- ========================= SECTION FEATURE ========================= -->
+    <section class="section-content padding-y-sm">
+    <div class="container">
+    <article class="card card-body">
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <figure class="item-feature">
+                <span class="text-primary"><i class="fa fa-2x fa-truck"></i></span>
+                <figcaption class="pt-3">
+                    <h5 class="title">Fast delivery</h5>
+                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore </p>
+                </figcaption>
+            </figure> <!-- iconbox // -->
+        </div><!-- col // -->
+        <div class="col-md-4">
+            <figure class="item-feature">
+                <span class="text-primary"><i class="fa fa-2x fa-landmark"></i></span>
+                <figcaption class="pt-3">
+                    <h5 class="title">Creative Strategy</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     </p>
+                </figcaption>
+            </figure> <!-- iconbox // -->
+        </div><!-- col // -->
+        <div class="col-md-4">
+            <figure class="item-feature">
+                <span class="text-primary"><i class="fa fa-2x fa-lock"></i></span>
+                <figcaption class="pt-3">
+                    <h5 class="title">High secured </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                     </p>
+                </figcaption>
+            </figure> <!-- iconbox // -->
+        </div> <!-- col // -->
+    </div>
+    </article>
+
+    </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION FEATURE END// ========================= -->
+
+
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content">
+    <div class="container">
+
+    <header class="section-heading">
+        <h3 class="section-title">Popular products</h3>
+    </header><!-- sect-heading -->
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/1(1).jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Just another product name</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/2.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Some item name here</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/3.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Great product name here</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/4.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Just another product name</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+    </div> <!-- row.// -->
+
+    </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content">
+    <div class="container">
+
+    <header class="section-heading">
+        <h3 class="section-title">New arrived</h3>
+    </header><!-- sect-heading -->
+
+    <div class="row">
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/5.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Just another product name</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/6.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Some item name here</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/7.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Great product name here</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/9.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Just another product name</a>
+
+                    <div class="rating-wrap">
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <span class="label-rating text-muted"> 34 reviws</span>
+                    </div>
+                    <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+    </div> <!-- row.// -->
+
+    </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content padding-bottom-sm">
+    <div class="container">
+
+    <header class="section-heading">
+        <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="btn btn-outline-primary float-right">See all</a>
+        <h3 class="section-title">Recommended</h3>
+    </header><!-- sect-heading -->
+
+    <div class="row">
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/1(1).jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Just another product name</a>
+                    <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/2.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Some item name here</a>
+                    <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/3.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Great product name here</a>
+                    <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div href="#" class="card card-product-grid">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="img-wrap"> <img src="/front/asset/4.jpg"> </a>
+                <figcaption class="info-wrap">
+                    <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#" class="title">Just another product name</a>
+                    <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+    </div> <!-- row.// -->
+
+    </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+    <!-- ========================= SECTION  ========================= -->
+    <section class="section-name bg padding-y-sm">
+    <div class="container">
+    <header class="section-heading">
+        <h3 class="section-title">Our Brands</h3>
+    </header><!-- sect-heading -->
+
+    <div class="row">
+        <div class="col-md-2 col-6">
+            <figure class="box item-logo">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#"><img src="/front/asset/logo1.png"></a>
+                <figcaption class="border-top pt-2">36 Products</figcaption>
+            </figure> <!-- item-logo.// -->
+        </div> <!-- col.// -->
+        <div class="col-md-2  col-6">
+            <figure class="box item-logo">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#"><img src="/front/asset/logo2.png"></a>
+                <figcaption class="border-top pt-2">980 Products</figcaption>
+            </figure> <!-- item-logo.// -->
+        </div> <!-- col.// -->
+        <div class="col-md-2  col-6">
+            <figure class="box item-logo">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#"><img src="/front/asset/logo3.png"></a>
+                <figcaption class="border-top pt-2">25 Products</figcaption>
+            </figure> <!-- item-logo.// -->
+        </div> <!-- col.// -->
+        <div class="col-md-2  col-6">
+            <figure class="box item-logo">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#"><img src="/front/asset/logo4.png"></a>
+                <figcaption class="border-top pt-2">72 Products</figcaption>
+            </figure> <!-- item-logo.// -->
+        </div> <!-- col.// -->
+        <div class="col-md-2  col-6">
+            <figure class="box item-logo">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#"><img src="/front/asset/logo5.png"></a>
+                <figcaption class="border-top pt-2">41 Products</figcaption>
+            </figure> <!-- item-logo.// -->
+        </div> <!-- col.// -->
+        <div class="col-md-2  col-6">
+            <figure class="box item-logo">
+                <a href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-index-1.html#"><img src="/front/asset/logo2.png"></a>
+                <figcaption class="border-top pt-2">12 Products</figcaption>
+            </figure> <!-- item-logo.// -->
+        </div> <!-- col.// -->
+    </div> <!-- row.// -->
+    </div><!-- container // -->
+    </section>
+    <!-- ========================= SECTION  END// ========================= -->
 
 
 
